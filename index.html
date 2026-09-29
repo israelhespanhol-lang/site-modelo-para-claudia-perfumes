@@ -71,7 +71,7 @@
             </nav>
             
             <div class="header-actions">
-                <button class="btn btn-whatsapp-header wpp-link" data-msg="Olá, Cláudia! Estou no seu site e gostaria de conversar.">
+                <button class="btn btn-whatsapp-header wpp-link" data-msg="Olá, Cláudia! Vi sua vitrine online e gostaria de saber mais sobre os produtos disponíveis.">
                     <i data-lucide="message-circle" stroke-width="1.5"></i> <span>Falar com a Cláudia</span>
                 </button>
                 <button class="menu-mobile-btn" id="menu-btn" aria-label="Menu">
@@ -106,7 +106,7 @@
                 
                 <div class="hero-buttons gs-reveal">
                     <button class="btn btn-primary scroll-link" data-target="#vitrine">Conhecer produtos</button>
-                    <button class="btn btn-outline wpp-link" data-msg="Olá, Cláudia! Gostaria de um atendimento personalizado.">
+                    <button class="btn btn-outline wpp-link" data-msg="Olá, Cláudia! Gostaria de conhecer as opções de perfumes, cosméticos, lingerie e presentes que você tem disponíveis.">
                         <i data-lucide="message-circle" stroke-width="1.5"></i> <span>Falar no WhatsApp</span>
                     </button>
                 </div>
@@ -492,7 +492,7 @@
         <div class="container text-center max-w-md gs-reveal">
             <h2 class="section-title text-light">Encontrou algo que combina com você?</h2>
             <p class="mt-3 mb-4 opacity-80">Fale diretamente com a Cláudia para consultar produtos, tamanhos, fragrâncias, promoções e disponibilidade.</p>
-            <button class="btn btn-primary btn-lg wpp-link" data-msg="Olá, Cláudia! Estou no seu site e encontrei algo que gostei.">
+            <button class="btn btn-primary btn-lg wpp-link" data-msg="Olá, Cláudia! Vi sua vitrine online e gostaria de consultar produtos, valores e disponibilidade.">
                 <span>Falar com a Cláudia</span>
             </button>
         </div>
@@ -528,13 +528,35 @@
         </div>
     </footer>
 
-    <!-- FAB WhatsApp Widget -->
-    <div class="fab-widget" id="fab-widget">
+    <!-- Contato rápido: compacto e expansível -->
+    <div class="quick-contact-widget" id="quick-contact-widget">
+        <div class="quick-contact-menu" id="quick-contact-menu" aria-hidden="true">
+            <button class="quick-contact-item wpp-link" data-msg="Olá, Cláudia! Gostaria de conhecer os perfumes e cosméticos disponíveis." aria-label="Perguntar sobre perfumes e cosméticos">
+                <i data-lucide="sparkles" stroke-width="1.6"></i>
+                <span>Perfumes</span>
+            </button>
+            <button class="quick-contact-item wpp-link" data-msg="Olá, Cláudia! Gostaria de conhecer os modelos de lingerie disponíveis, tamanhos e valores." aria-label="Perguntar sobre lingerie">
+                <i data-lucide="heart" stroke-width="1.6"></i>
+                <span>Lingerie</span>
+            </button>
+            <button class="quick-contact-item wpp-link" data-msg="Olá, Cláudia! Estou procurando um presente e gostaria de algumas sugestões." aria-label="Pedir sugestão de presente">
+                <i data-lucide="gift" stroke-width="1.6"></i>
+                <span>Presentes</span>
+            </button>
+            <button class="quick-contact-item wpp-link age-restricted-link" data-msg="Olá, Cláudia! Gostaria de conhecer discretamente as opções da linha de bem-estar íntimo." aria-label="Consultar bem-estar íntimo">
+                <i data-lucide="lock-keyhole" stroke-width="1.6"></i>
+                <span>Discreto</span>
+            </button>
+        </div>
+
         <div class="fab-tooltip" id="fab-tooltip">
             <p>Quer ajuda para escolher? ✨</p>
         </div>
-        <button class="fab-btn wpp-link" data-msg="Olá, Cláudia! Preciso de ajuda para escolher um produto." aria-label="Falar no WhatsApp">
-            <i data-lucide="message-circle" fill="currentColor"></i>
+
+        <button class="fab-btn quick-contact-toggle" id="quick-contact-toggle" aria-label="Abrir opções de contato" aria-expanded="false">
+            <i data-lucide="message-circle" class="quick-contact-open-icon"></i>
+            <i data-lucide="x" class="quick-contact-close-icon"></i>
+            <span class="fab-label">Falar com a Cláudia</span>
         </button>
     </div>
 
