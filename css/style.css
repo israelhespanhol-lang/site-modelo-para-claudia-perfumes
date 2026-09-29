@@ -1019,3 +1019,356 @@ body > *:not(.ambient-glow):not(.noise-layer):not(.scroll-progress){ position:re
     .ambient-glow,.noise-layer{ display:none; }
     .scroll-progress span{ transform:none !important; }
 }
+
+
+/* ==========================================================================
+   Rich Editorial Upgrade — Lingerie, Intimidade e Consultor
+   ========================================================================== */
+.lingerie-showcase {
+    position: relative;
+    overflow: hidden;
+}
+.lingerie-showcase::before {
+    content: "";
+    position: absolute;
+    width: 34rem;
+    height: 34rem;
+    border-radius: 50%;
+    right: -12rem;
+    top: -10rem;
+    background: radial-gradient(circle, rgba(196,142,135,.20), transparent 68%);
+    pointer-events: none;
+}
+.lingerie-heading {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+    align-items: end;
+}
+@media (min-width: 900px) {
+    .lingerie-heading {
+        grid-template-columns: 1.15fr .85fr;
+        gap: 6rem;
+    }
+}
+.lingerie-copy {
+    max-width: 540px;
+    justify-self: end;
+}
+.lingerie-copy p {
+    font-size: 1.02rem;
+    opacity: .78;
+}
+
+.lingerie-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    .lingerie-gallery {
+        grid-template-columns: 1.25fr .75fr;
+        grid-template-rows: repeat(2, minmax(230px, 1fr));
+        min-height: 720px;
+        gap: 1.25rem;
+    }
+    .lingerie-look--hero {
+        grid-row: 1 / span 2;
+    }
+}
+.lingerie-look {
+    position: relative;
+    min-height: 320px;
+    overflow: hidden;
+    background: #ddd4cd;
+    box-shadow: 0 20px 55px rgba(47,15,27,.08);
+}
+.lingerie-look img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .9s cubic-bezier(.2,.7,.2,1), filter .6s ease;
+}
+.lingerie-look::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(27,12,18,.72), rgba(27,12,18,0) 58%);
+}
+.lingerie-look-overlay {
+    position: absolute;
+    z-index: 2;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    color: white;
+}
+.lingerie-look-overlay span {
+    display: block;
+    margin-bottom: .4rem;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: .68rem;
+    opacity: .78;
+}
+.lingerie-look-overlay h3 {
+    color: white;
+    font-size: clamp(1.5rem, 2.4vw, 2.5rem);
+}
+.lingerie-look:hover img {
+    transform: scale(1.04);
+    filter: saturate(1.06);
+}
+.lingerie-notes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .8rem;
+    margin-top: 1.25rem;
+}
+@media (min-width: 760px) {
+    .lingerie-notes { grid-template-columns: repeat(3, 1fr); }
+}
+.lingerie-notes span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .65rem;
+    padding: 1rem 1.15rem;
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(74,26,44,.08);
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+.lingerie-notes svg {
+    width: 17px;
+    color: var(--color-gold);
+}
+
+.intimidade {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 78% 18%, rgba(196,142,135,.14), transparent 30%),
+        linear-gradient(180deg, #fbf8f4 0%, #f5eee8 100%);
+}
+.intimidade-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+@media (min-width: 992px) {
+    .intimidade-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+    }
+}
+.intimidade-visual {
+    position: relative;
+    min-height: 560px;
+}
+.intimidade-main-img {
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    object-fit: cover;
+    box-shadow: 0 28px 70px rgba(47,15,27,.14);
+}
+.intimidade-visual-card {
+    position: absolute;
+    right: -1.5rem;
+    bottom: 2rem;
+    width: min(86%, 360px);
+    display: flex;
+    gap: .9rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.25rem;
+    box-shadow: 0 18px 45px rgba(47,15,27,.12);
+}
+.intimidade-visual-card svg {
+    width: 20px;
+    flex: 0 0 auto;
+    color: var(--color-gold);
+    margin-top: .1rem;
+}
+.intimidade-visual-card strong,
+.intimidade-visual-card span {
+    display: block;
+}
+.intimidade-visual-card strong {
+    font-size: .9rem;
+    margin-bottom: .15rem;
+}
+.intimidade-visual-card span {
+    font-size: .78rem;
+    opacity: .7;
+}
+.intimidade-content .section-title {
+    max-width: 620px;
+}
+.intimidade-lead {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    opacity: .8;
+    max-width: 650px;
+}
+.intimidade-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: .8rem;
+    margin-top: 2rem;
+}
+.intimidade-feature {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    padding: .95rem 1rem;
+    background: rgba(255,255,255,.58);
+    border: 1px solid rgba(74,26,44,.08);
+}
+.intimidade-feature svg {
+    width: 18px;
+    color: var(--color-gold);
+}
+.intimidade-feature span {
+    font-size: .82rem;
+    font-weight: 500;
+}
+@media (max-width: 991px) {
+    .intimidade-visual { min-height: 430px; }
+    .intimidade-main-img { min-height: 430px; }
+    .intimidade-visual-card { right: 1rem; left: 1rem; width: auto; }
+}
+
+.consultor {
+    position: relative;
+    overflow: hidden;
+}
+.consultor::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 22%, rgba(203,161,83,.16), transparent 28%),
+        radial-gradient(circle at 86% 78%, rgba(255,255,255,.07), transparent 24%);
+    pointer-events: none;
+}
+.consultor-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: stretch;
+}
+@media (min-width: 992px) {
+    .consultor-grid {
+        grid-template-columns: .9fr 1.1fr;
+        gap: 5rem;
+    }
+}
+.consultor-visual {
+    position: relative;
+    min-height: 560px;
+    overflow: hidden;
+}
+.consultor-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(.9) contrast(1.03);
+}
+.consultor-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(25,7,14,.82), transparent 58%);
+}
+.consultor-visual-overlay {
+    position: absolute;
+    z-index: 2;
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 1.6rem;
+}
+.consultor-visual-overlay span {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: .68rem;
+    opacity: .76;
+    margin-bottom: .45rem;
+}
+.consultor-visual-overlay h3 {
+    color: white;
+    font-size: clamp(1.7rem, 2.6vw, 2.7rem);
+}
+.consultor-content {
+    align-self: center;
+}
+.consultor-content > p {
+    max-width: 650px;
+}
+.quiz-container {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.16);
+    box-shadow: 0 24px 60px rgba(0,0,0,.12);
+}
+.quiz-container::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    right: -80px;
+    bottom: -100px;
+    background: rgba(255,255,255,.07);
+}
+.quiz-progress {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    margin: 0 auto 2rem;
+}
+.quiz-progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.7);
+    background: transparent;
+}
+.quiz-progress-dot.active {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+}
+.quiz-progress-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,.28);
+}
+.quiz-kicker {
+    display: block;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    margin-bottom: .8rem;
+    opacity: .65;
+}
+.quiz-question {
+    color: white;
+}
+.quiz-btn {
+    min-width: 118px;
+}
+.quiz-btn.is-selected {
+    background: white;
+    color: var(--color-vinho);
+    border-color: white;
+}
+@media (max-width: 767px) {
+    .consultor-visual { min-height: 420px; }
+    .quiz-container { padding: 2rem 1rem; }
+    .quiz-options { gap: .6rem; }
+    .quiz-btn { min-width: calc(50% - .3rem); padding: .8rem .7rem; }
+}
