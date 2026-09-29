@@ -293,7 +293,7 @@ function renderVitrine(filterCategory) {
             <div class="produto-card">
                 <div class="produto-img-box">
                     ${badge}
-                    <img src="${p.image}" alt="${p.name}" loading="lazy">
+                    <img src="${p.image}" alt="${p.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/6675831/pexels-photo-6675831.jpeg?auto=compress&cs=tinysrgb&w=900';">
                 </div>
                 <span class="produto-brand">${p.brand}</span>
                 <h3 class="produto-title">${p.name}</h3>
