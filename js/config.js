@@ -45,7 +45,7 @@ const PRODUCTS = [
        category: "lingerie",
        brand: "Seleção Exclusiva",
        description: "Delicadeza, conforto e sofisticação em uma só peça.",
-       image: "https://images.unsplash.com/photo-1582236357497-b2ebbb1c4355?q=80&w=600&auto=format&fit=crop",
+       image: "https://images.pexels.com/photos/6879815/pexels-photo-6879815.jpeg?auto=compress&cs=tinysrgb&w=900",
        promotion: true
     },
     {
