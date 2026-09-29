@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>Cláudia | Perfumes, Beleza, Lingerie e Bem-estar</title>
+    <meta name="description" content="Perfumes, cosméticos, presentes, lingerie e produtos de bem-estar. Atendimento personalizado e pedidos pelo WhatsApp.">
+    <meta property="og:title" content="Cláudia | Perfumes, Beleza, Lingerie e Bem-estar">
+    <meta property="og:description" content="Perfumes, cosméticos, presentes, lingerie e produtos de bem-estar. Atendimento personalizado e pedidos pelo WhatsApp.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts: Cormorant Garamond for Headings, Manrope for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Preload Hero Image for Performance -->
+    <link rel="preload" href="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000&auto=format&fit=crop" as="image">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fallback if JS is disabled -->
+    <noscript>
+        <style>
+            .gs-reveal, .gs-stagger, .gs-scale { opacity: 1 !important; transform: none !important; }
+        </style>
+    </noscript>
+</head>
+<body>
+
+    <!-- Aviso 18+ Overlay -->
+    <div id="age-gate" class="age-gate-overlay" style="display: none;">
+        <div class="age-gate-content glass-effect">
+            <i data-lucide="shield-check" class="age-gate-icon"></i>
+            <h3>Conteúdo destinado a maiores de 18 anos</h3>
+            <p>Os produtos de bem-estar íntimo são apresentados com total discrição e elegância, exclusivamente para o público adulto.</p>
+            <div class="age-gate-buttons">
+                <button id="btn-age-yes" class="btn btn-primary">Tenho 18 anos ou mais</button>
+                <button id="btn-age-no" class="btn btn-outline">Voltar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#hero" class="logo scroll-link">
+                <span id="store-name-header">Cláudia</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#hero" class="scroll-link">Início</a></li>
+                    <li><a href="#vitrine" class="scroll-link">Vitrine</a></li>
+                    <li><a href="#beleza" class="scroll-link">Beleza</a></li>
+                    <li><a href="#lingerie" class="scroll-link">Lingerie</a></li>
+                    <li><a href="#intimidade" class="scroll-link age-restricted-link">Intimidade</a></li>
+                    <li><a href="#consultor" class="scroll-link">Consultor</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="btn btn-whatsapp-header wpp-link" data-msg="Olá, Cláudia! Estou no seu site e gostaria de conversar.">
+                    <i data-lucide="message-circle" stroke-width="1.5"></i> <span>Falar com a Cláudia</span>
+                </button>
+                <button class="menu-mobile-btn" id="menu-btn" aria-label="Menu">
+                    <i data-lucide="menu" stroke-width="1.5"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <button class="close-menu-btn" id="close-menu-btn"><i data-lucide="x"></i></button>
+            <ul class="mobile-nav-links">
+                <li><a href="#hero" class="close-menu scroll-link">Início</a></li>
+                <li><a href="#vitrine" class="close-menu scroll-link">Vitrine</a></li>
+                <li><a href="#beleza" class="close-menu scroll-link">Beleza</a></li>
+                <li><a href="#lingerie" class="close-menu scroll-link">Lingerie</a></li>
+                <li><a href="#intimidade" class="close-menu scroll-link age-restricted-link">Intimidade (18+)</a></li>
+                <li><a href="#consultor" class="close-menu scroll-link">Consultor</a></li>
+                <li><a href="#contato" class="close-menu scroll-link">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-tagline gs-reveal">Beleza • Autocuidado • Intimidade</span>
+                <h1 class="hero-title gs-reveal">Cuide de <em>você.</em><br>Do seu jeito.</h1>
+                <p class="hero-subtitle gs-reveal">Perfumes, beleza, lingerie e produtos selecionados para tornar seus momentos ainda mais especiais.</p>
+                
+                <div class="hero-buttons gs-reveal">
+                    <button class="btn btn-primary scroll-link" data-target="#vitrine">Conhecer produtos</button>
+                    <button class="btn btn-outline wpp-link" data-msg="Olá, Cláudia! Gostaria de um atendimento personalizado.">
+                        <i data-lucide="message-circle" stroke-width="1.5"></i> <span>Falar no WhatsApp</span>
+                    </button>
+                </div>
+                
+                <div class="hero-features gs-reveal">
+                    <div class="feature"><i data-lucide="sparkles" stroke-width="1.5"></i> Atendimento personalizado</div>
+                    <div class="feature"><i data-lucide="gift" stroke-width="1.5"></i> Produtos selecionados</div>
+                    <div class="feature"><i data-lucide="lock-keyhole" stroke-width="1.5"></i> Atendimento discreto</div>
+                </div>
+            </div>
+            
+            <div class="hero-image-wrapper gs-scale">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000&auto=format&fit=crop" alt="Editorial Beauty" class="hero-img gs-parallax" fetchpriority="high">
+                <div class="hero-decoration"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atalhos / Categorias -->
+    <section class="atalhos section-padding" id="atalhos">
+        <div class="container">
+            <h2 class="section-title text-center gs-reveal">O que você procura hoje?</h2>
+            
+            <div class="atalhos-grid gs-stagger-container">
+                <a href="#vitrine" class="atalho-card scroll-link gs-stagger" data-filter="perfumes">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=600&auto=format&fit=crop" alt="Perfumes" loading="lazy">
+                    <div class="atalho-overlay">
+                        <h3>Perfumaria</h3>
+                        <span class="explore-btn">Explorar <i data-lucide="arrow-right" stroke-width="1.5"></i></span>
+                    </div>
+                </a>
+                <a href="#beleza" class="atalho-card scroll-link gs-stagger" data-filter="beleza">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=600&auto=format&fit=crop" alt="Beleza e Cuidados" loading="lazy">
+                    <div class="atalho-overlay">
+                        <h3>Beleza & Cuidados</h3>
+                        <span class="explore-btn">Explorar <i data-lucide="arrow-right" stroke-width="1.5"></i></span>
+                    </div>
+                </a>
+                <a href="#lingerie" class="atalho-card scroll-link gs-stagger" data-filter="lingerie">
+                    <img src="https://images.unsplash.com/photo-1582236357497-b2ebbb1c4355?q=80&w=600&auto=format&fit=crop" alt="Lingerie" loading="lazy">
+                    <div class="atalho-overlay">
+                        <h3>Lingerie</h3>
+                        <span class="explore-btn">Explorar <i data-lucide="arrow-right" stroke-width="1.5"></i></span>
+                    </div>
+                </a>
+                <a href="#intimidade" class="atalho-card age-restricted-link scroll-link gs-stagger" data-filter="intimidade">
+                    <img src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=600&auto=format&fit=crop" alt="Bem-estar Íntimo" loading="lazy">
+                    <div class="atalho-overlay">
+                        <h3>Bem-estar Íntimo</h3>
+                        <span class="explore-btn">Explorar <i data-lucide="arrow-right" stroke-width="1.5"></i></span>
+                    </div>
+                </a>
+                <a href="#presentes" class="atalho-card scroll-link gs-stagger" data-filter="presentes">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=600&auto=format&fit=crop" alt="Presentes" loading="lazy">
+                    <div class="atalho-overlay">
+                        <h3>Presentes</h3>
+                        <span class="explore-btn">Explorar <i data-lucide="arrow-right" stroke-width="1.5"></i></span>
+                    </div>
+                </a>
+                <a href="#promocoes" class="atalho-card scroll-link gs-stagger" data-filter="promo">
+                    <img src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?q=80&w=600&auto=format&fit=crop" alt="Promoções" loading="lazy">
+                    <div class="atalho-overlay">
+                        <h3>Promoções</h3>
+                        <span class="explore-btn">Explorar <i data-lucide="arrow-right" stroke-width="1.5"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vitrine (Filtros) -->
+    <section class="vitrine section-padding bg-nude" id="vitrine">
+        <div class="container">
+            <div class="section-header text-center gs-reveal">
+                <span class="tag">Coleção</span>
+                <h2 class="section-title">Nossa Vitrine</h2>
+            </div>
+            
+            <div class="vitrine-filters gs-reveal">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="perfumes">Perfumes</button>
+                <button class="filter-btn" data-filter="beleza">Beleza</button>
+                <button class="filter-btn" data-filter="lingerie">Lingerie</button>
+                <button class="filter-btn age-restricted-btn" data-filter="intimidade">Intimidade (18+)</button>
+                <button class="filter-btn" data-filter="presentes">Presentes</button>
+            </div>
+            
+            <div class="vitrine-grid" id="vitrine-grid">
+                <!-- Injetado por JS (com swiper no mobile ou grid no desktop, se necessário, ou apenas grid responsivo) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Beleza e Autocuidado -->
+    <section class="editorial section-padding" id="beleza">
+        <div class="container editorial-grid">
+            <div class="editorial-image gs-scale">
+                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop" alt="Beleza e Autocuidado" class="gs-parallax" loading="lazy">
+            </div>
+            <div class="editorial-content gs-reveal">
+                <span class="tag">Editorial</span>
+                <h2 class="section-title">Seu momento de cuidado.</h2>
+                <p>Nossa linha de beleza e autocuidado foi pensada para transformar sua rotina em um verdadeiro ritual. Descubra hidratantes acetinados, cuidados corporais e cosméticos que valorizam sua pele.</p>
+                <ul class="editorial-list gs-stagger-container">
+                    <li class="gs-stagger"><i data-lucide="sparkles" stroke-width="1.5"></i> Hidratantes</li>
+                    <li class="gs-stagger"><i data-lucide="heart" stroke-width="1.5"></i> Cuidados Corporais</li>
+                    <li class="gs-stagger"><i data-lucide="star" stroke-width="1.5"></i> Cosméticos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lingerie -->
+    <section class="editorial section-padding bg-nude" id="lingerie">
+        <div class="container editorial-grid reverse">
+            <div class="editorial-image gs-scale">
+                <img src="https://images.unsplash.com/photo-1582236357497-b2ebbb1c4355?q=80&w=800&auto=format&fit=crop" alt="Lingerie Elegante" class="gs-parallax" loading="lazy">
+            </div>
+            <div class="editorial-content gs-reveal">
+                <span class="tag">Moda Íntima</span>
+                <h2 class="section-title">Para se sentir ainda mais você.</h2>
+                <p>Lingeries selecionadas para diferentes estilos, momentos e ocasiões. Peças que unem conforto, sofisticação e sensualidade na medida certa, valorizando a beleza de cada corpo.</p>
+                <button class="btn btn-primary mt-3 wpp-link" data-msg="Olá, Cláudia! Gostaria de conhecer os modelos de lingerie disponíveis.">
+                    <span>Consultar modelos</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Área 18+ / Bem Estar -->
+    <section class="intimidade section-padding" id="intimidade">
+        <div class="container text-center max-w-lg gs-reveal">
+            <span class="tag">Área 18+</span>
+            <h2 class="section-title">Bem-estar íntimo</h2>
+            <div class="discreet-badge">
+                <i data-lucide="shield-check" stroke-width="1.5"></i> Atendimento discreto e sigiloso
+            </div>
+            <p class="mt-3">Produtos selecionados para quem deseja explorar autocuidado, intimidade e bem-estar com total discrição e elegância.</p>
+            <div class="intimidade-categories mt-4">
+                <span>Bem-estar</span> • <span>Cuidados Íntimos</span> • <span>Presentes para casal</span> • <span>Acessórios</span>
+            </div>
+            <button class="btn btn-dark mt-4 wpp-link age-restricted-link" data-msg="Olá, Cláudia! Gostaria de conhecer as opções da linha de bem-estar íntimo de forma discreta.">
+                <i data-lucide="lock-keyhole" stroke-width="1.5"></i> <span>Consultar com discrição</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Consultor de Perfumes -->
+    <section class="consultor section-padding bg-vinho text-light" id="consultor">
+        <div class="container text-center max-w-md gs-reveal">
+            <span class="tag text-light">Interativo</span>
+            <h2 class="section-title text-light">Qual fragrância combina com você?</h2>
+            <p class="opacity-80">Deixe a Cláudia te ajudar a encontrar a opção perfeita respondendo a duas perguntas rápidas.</p>
+            
+            <div class="quiz-container mt-4 glass-effect">
+                <!-- Etapa 1 -->
+                <div class="quiz-step active" id="quiz-step-1">
+                    <h3 class="quiz-question">Qual estilo você prefere?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" data-value="Doce">Doce</button>
+                        <button class="quiz-btn" data-value="Floral">Floral</button>
+                        <button class="quiz-btn" data-value="Fresco">Fresco</button>
+                        <button class="quiz-btn" data-value="Marcante">Marcante</button>
+                        <button class="quiz-btn" data-value="Amadeirado">Amadeirado</button>
+                    </div>
+                </div>
+                
+                <!-- Etapa 2 -->
+                <div class="quiz-step" id="quiz-step-2" style="display: none;">
+                    <h3 class="quiz-question">Você procura para:</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" data-value="Uso diário">Uso diário</button>
+                        <button class="quiz-btn" data-value="Noite">Noite</button>
+                        <button class="quiz-btn" data-value="Presente">Presente</button>
+                        <button class="quiz-btn" data-value="Ocasião especial">Ocasião especial</button>
+                    </div>
+                </div>
+                
+                <!-- Resultado -->
+                <div class="quiz-step" id="quiz-step-result" style="display: none;">
+                    <h3 class="quiz-question">Perfeito!</h3>
+                    <p class="mb-4">Já sabemos o seu perfil. Fale com a Cláudia para receber as melhores indicações.</p>
+                    <button id="quiz-wpp-btn" class="btn btn-primary wpp-link">
+                        <i data-lucide="message-circle" stroke-width="1.5"></i> <span>Quero uma indicação</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Presentes Swiper -->
+    <section class="presentes section-padding" id="presentes">
+        <div class="container">
+            <div class="section-header text-center gs-reveal">
+                <span class="tag">Para presentear</span>
+                <h2 class="section-title">Um presente para cada ocasião.</h2>
+                <p>As melhores opções para surpreender.</p>
+            </div>
+            
+            <!-- Swiper Container -->
+            <div class="swiper swiper-presentes gs-reveal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide presente-card">
+                        <div class="presente-img"><img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=400&auto=format&fit=crop" alt="Aniversário" loading="lazy"></div>
+                        <h4>Aniversário</h4>
+                    </div>
+                    <div class="swiper-slide presente-card">
+                        <div class="presente-img"><img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400&auto=format&fit=crop" alt="Romântico" loading="lazy"></div>
+                        <h4>Romântico</h4>
+                    </div>
+                    <div class="swiper-slide presente-card">
+                        <div class="presente-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=400&auto=format&fit=crop" alt="Dia especial" loading="lazy"></div>
+                        <h4>Dia especial</h4>
+                    </div>
+                    <div class="swiper-slide presente-card">
+                        <div class="presente-img"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop" alt="Amiga" loading="lazy"></div>
+                        <h4>Amiga</h4>
+                    </div>
+                    <div class="swiper-slide presente-card">
+                        <div class="presente-img"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?q=80&w=400&auto=format&fit=crop" alt="Personalizado" loading="lazy"></div>
+                        <h4>Personalizado</h4>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+            
+            <div class="text-center mt-5 gs-reveal">
+                <button class="btn btn-primary wpp-link" data-msg="Olá, Cláudia! Estou procurando um presente e gostaria de algumas sugestões.">
+                    <span>Me ajude a escolher</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Marcas & Promoções -->
+    <section class="marcas-promo section-padding bg-nude" id="promocoes">
+        <div class="container marcas-promo-grid">
+            <div class="box-marcas gs-reveal">
+                <span class="tag">Exclusividade</span>
+                <h3 class="mb-3 section-title" style="font-size: 2.2rem;">Marcas que você encontra por aqui</h3>
+                <div class="marcas-list" id="marcas-container">
+                    <!-- Gerado por JS baseado no config.js -->
+                </div>
+            </div>
+            
+            <div class="box-promo gs-reveal">
+                <h3 class="mb-3 section-title" style="font-size: 2.2rem;">Ofertas Especiais</h3>
+                <div class="promo-banner glass-effect">
+                    <i data-lucide="sparkles" class="promo-icon mb-2" stroke-width="1.5"></i>
+                    <span id="promo-text-display">Promoções incríveis esperando por você.</span>
+                </div>
+                <p class="disclaimer mt-2"><i data-lucide="info" style="width:14px; height:14px;"></i> Consulte condições e disponibilidade no WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="sobre section-padding" id="sobre">
+        <div class="container text-center max-w-md gs-reveal">
+            <i data-lucide="heart" class="icon-large mb-3 text-rose" stroke-width="1.5" style="width:48px;height:48px;"></i>
+            <h2 class="section-title">Atendimento próximo e personalizado.</h2>
+            <p class="text-lg mt-3 opacity-80">Aqui você não precisa escolher sozinha. A proposta é ajudar cada cliente a encontrar perfumes, presentes, itens de beleza, lingerie e produtos de bem-estar de acordo com aquilo que procura.</p>
+            <p class="highlight-text mt-4">Escolha com calma. A Cláudia te ajuda.</p>
+        </div>
+    </section>
+
+    <!-- Instagram Placeholder -->
+    <section class="instagram section-padding bg-nude">
+        <div class="container">
+            <div class="section-header text-center gs-reveal">
+                <h2 class="section-title">Novidades por aqui</h2>
+                <a href="#" id="insta-link" class="insta-link" target="_blank"><i data-lucide="instagram" stroke-width="1.5"></i> <span>@claudia</span></a>
+            </div>
+            
+            <div class="insta-grid gs-stagger-container">
+                <img class="gs-stagger" src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=400&auto=format&fit=crop" alt="Insta" loading="lazy">
+                <img class="gs-stagger" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&auto=format&fit=crop" alt="Insta" loading="lazy">
+                <img class="gs-stagger" src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=400&auto=format&fit=crop" alt="Insta" loading="lazy">
+                <img class="gs-stagger" src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=400&auto=format&fit=crop" alt="Insta" loading="lazy">
+                <img class="gs-stagger" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop" alt="Insta" loading="lazy">
+                <img class="gs-stagger" src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=400&auto=format&fit=crop" alt="Insta" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final section-padding bg-vinho text-light" id="contato">
+        <div class="container text-center max-w-md gs-reveal">
+            <h2 class="section-title text-light">Encontrou algo que combina com você?</h2>
+            <p class="mt-3 mb-4 opacity-80">Fale diretamente com a Cláudia para consultar produtos, tamanhos, fragrâncias, promoções e disponibilidade.</p>
+            <button class="btn btn-primary btn-lg wpp-link" data-msg="Olá, Cláudia! Estou no seu site e encontrei algo que gostei.">
+                <span>Falar com a Cláudia</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid gs-reveal">
+            <div class="footer-brand">
+                <h3 id="footer-store-name">Cláudia</h3>
+                <p class="opacity-80 mt-2">Sua boutique de beleza, intimidade e bem-estar.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#vitrine" class="scroll-link">Vitrine</a></li>
+                    <li><a href="#beleza" class="scroll-link">Beleza</a></li>
+                    <li><a href="#lingerie" class="scroll-link">Lingerie</a></li>
+                    <li><a href="#intimidade" class="scroll-link age-restricted-link">Intimidade (18+)</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i data-lucide="message-circle" stroke-width="1.5"></i> <span id="footer-phone">Whatsapp</span></li>
+                    <li id="footer-address-li" style="display:none;"><i data-lucide="map-pin" stroke-width="1.5"></i> <span id="footer-address"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; <span id="current-year"></span> Cláudia | Beleza & Bem-estar. Todos os direitos reservados.</p>
+            <p class="disclaimer mt-2">Este é um site demonstrativo de catálogo. Vendas realizadas exclusivamente via atendimento.</p>
+        </div>
+    </footer>
+
+    <!-- FAB WhatsApp Widget -->
+    <div class="fab-widget" id="fab-widget">
+        <div class="fab-tooltip" id="fab-tooltip">
+            <p>Quer ajuda para escolher? ✨</p>
+        </div>
+        <button class="fab-btn wpp-link" data-msg="Olá, Cláudia! Preciso de ajuda para escolher um produto." aria-label="Falar no WhatsApp">
+            <i data-lucide="message-circle" fill="currentColor"></i>
+        </button>
+    </div>
+
+    <!-- Scripts: Vendor -->
+    <!-- Lenis -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- App Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

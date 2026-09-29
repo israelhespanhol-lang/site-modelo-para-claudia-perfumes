@@ -1,0 +1,69 @@
+const STORE = {
+    name: "Cláudia | Beleza & Bem-estar",
+    whatsapp: "5511999999999", // Apenas números
+    instagram: "@claudia.beleza",
+    phone: "(11) 99999-9999",
+    address: "",
+    promotion: "Até 20% OFF em produtos selecionados",
+    brands: [
+        "O Boticário",
+        "Natura"
+    ]
+};
+
+const PRODUCTS = [
+    {
+       id: 1,
+       name: "Floratta Red",
+       category: "perfumes",
+       brand: "O Boticário",
+       description: "Fragrância feminina, marcante e envolvente.",
+       image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=600&auto=format&fit=crop",
+       promotion: true
+    },
+    {
+       id: 2,
+       name: "Essencial Exclusivo",
+       category: "perfumes",
+       brand: "Natura",
+       description: "Amadeirado intenso para momentos especiais.",
+       image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=600&auto=format&fit=crop",
+       promotion: false
+    },
+    {
+       id: 3,
+       name: "Creme Acetinado Lily",
+       category: "beleza",
+       brand: "O Boticário",
+       description: "Hidratação profunda com toque acetinado.",
+       image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=600&auto=format&fit=crop",
+       promotion: false
+    },
+    {
+       id: 4,
+       name: "Conjunto Renda Premium",
+       category: "lingerie",
+       brand: "Seleção Exclusiva",
+       description: "Delicadeza, conforto e sofisticação em uma só peça.",
+       image: "https://images.unsplash.com/photo-1582236357497-b2ebbb1c4355?q=80&w=600&auto=format&fit=crop",
+       promotion: true
+    },
+    {
+       id: 5,
+       name: "Óleo de Massagem Aquecimento",
+       category: "intimidade",
+       brand: "Bem-estar Íntimo",
+       description: "Desperte os sentidos com uma fragrância envolvente.",
+       image: "https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=600&auto=format&fit=crop",
+       promotion: false
+    },
+    {
+       id: 6,
+       name: "Kit Presente Completo",
+       category: "presentes",
+       brand: "Diversos",
+       description: "Opção perfeita e elegante para surpreender quem você ama.",
+       image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=600&auto=format&fit=crop",
+       promotion: false
+    }
+];
