@@ -405,6 +405,13 @@ function setupMobileMenu() {
 
 function setupQuiz() {
     let quizData = { estilo: '', ocasiao: '' };
+    const progressDots = document.querySelectorAll('.quiz-progress-dot');
+
+    function updateQuizProgress(step) {
+        progressDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index <= step - 1);
+        });
+    }
     const step1 = document.getElementById('quiz-step-1');
     const step2 = document.getElementById('quiz-step-2');
     const stepResult = document.getElementById('quiz-step-result');
@@ -418,6 +425,7 @@ function setupQuiz() {
                 quizData.estilo = val;
                 step1.style.display = 'none';
                 step2.style.display = 'block';
+                updateQuizProgress(2);
             } else if (this.closest('#quiz-step-2')) {
                 quizData.ocasiao = val;
                 step2.style.display = 'none';
@@ -460,7 +468,7 @@ function initPremiumUI(prefersReducedMotion) {
     }
 
     if (!prefersReducedMotion && window.VanillaTilt) {
-        VanillaTilt.init(document.querySelectorAll('.atalho-card, .produto-card, .presente-card'), {
+        VanillaTilt.init(document.querySelectorAll('.atalho-card, .produto-card, .presente-card, .lingerie-look, .intimidade-feature'), {
             max: 4,
             speed: 450,
             scale: 1.01,
