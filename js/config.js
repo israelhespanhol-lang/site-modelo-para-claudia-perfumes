@@ -1,8 +1,8 @@
 const STORE = {
     name: "Cláudia | Beleza & Bem-estar",
-    whatsapp: "5511999999999", // Apenas números
+    whatsapp: "555384197001", // Apenas números
     instagram: "@claudia.beleza",
-    phone: "(11) 99999-9999",
+    phone: "+55 53 8419-7001",
     address: "",
     promotion: "Até 20% OFF em produtos selecionados",
     brands: [
