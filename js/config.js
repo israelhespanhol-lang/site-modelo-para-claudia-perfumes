@@ -45,7 +45,7 @@ const PRODUCTS = [
        category: "lingerie",
        brand: "Seleção Exclusiva",
        description: "Delicadeza, conforto e sofisticação em uma só peça.",
-       image: "https://images.pexels.com/photos/6879815/pexels-photo-6879815.jpeg?auto=compress&cs=tinysrgb&w=900",
+       image: "https://images.pexels.com/photos/9162886/pexels-photo-9162886.jpeg?auto=compress&cs=tinysrgb&w=900",
        promotion: true
     },
     {
@@ -63,7 +63,7 @@ const PRODUCTS = [
        category: "lingerie",
        brand: "Modelo demonstrativo",
        description: "Vitrine de referência para apresentar estilos e consultar tamanhos pelo WhatsApp.",
-       image: "https://images.pexels.com/photos/6879815/pexels-photo-6879815.jpeg?auto=compress&cs=tinysrgb&w=900",
+       image: "https://images.pexels.com/photos/10457213/pexels-photo-10457213.jpeg?auto=compress&cs=tinysrgb&w=900",
        promotion: false
     },
     {
@@ -72,7 +72,7 @@ const PRODUCTS = [
        category: "lingerie",
        brand: "Modelo demonstrativo",
        description: "Composição de exemplo para deixar o catálogo mais visual e sofisticado.",
-       image: "https://images.pexels.com/photos/4314754/pexels-photo-4314754.jpeg?auto=compress&cs=tinysrgb&w=900",
+       image: "https://images.pexels.com/photos/6675848/pexels-photo-6675848.jpeg?auto=compress&cs=tinysrgb&w=900",
        promotion: false
     },
     {
