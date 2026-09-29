@@ -1372,3 +1372,67 @@ body > *:not(.ambient-glow):not(.noise-layer):not(.scroll-progress){ position:re
     .quiz-options { gap: .6rem; }
     .quiz-btn { min-width: calc(50% - .3rem); padding: .8rem .7rem; }
 }
+
+
+/* ==========================================================================
+   Fix — brilho/tilt nunca pode vazar para fora da imagem/card
+   ========================================================================== */
+.atalho-card,
+.lingerie-look,
+.intimidade-feature {
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* O brilho do card de produto deve existir somente dentro da foto */
+.produto-card::after {
+    display: none !important;
+}
+
+.produto-img-box {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.produto-img-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+        120deg,
+        transparent 18%,
+        rgba(255,255,255,.32) 46%,
+        transparent 72%
+    );
+    transform: translateX(-135%);
+    transition: transform .85s cubic-bezier(.2,.7,.2,1);
+}
+
+.produto-card:hover .produto-img-box::after {
+    transform: translateX(135%);
+}
+
+/* VanillaTilt injeta estes elementos: mantê-los presos ao card */
+.js-tilt-glare {
+    border-radius: inherit !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+}
+
+.js-tilt-glare-inner {
+    border-radius: inherit !important;
+}
+
+/* Presentes: sem glare sobre textos; só efeito na foto */
+.presente-card {
+    overflow: visible !important;
+}
+
+.presente-img {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
