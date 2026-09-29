@@ -437,23 +437,71 @@
     </section>
     
     <!-- Marcas & Promoções -->
-    <section class="marcas-promo section-padding bg-nude" id="promocoes">
-        <div class="container marcas-promo-grid">
-            <div class="box-marcas gs-reveal">
-                <span class="tag">Exclusividade</span>
-                <h3 class="mb-3 section-title" style="font-size: 2.2rem;">Marcas que você encontra por aqui</h3>
-                <div class="marcas-list" id="marcas-container">
-                    <!-- Gerado por JS baseado no config.js -->
+    <section class="marcas-promo section-padding" id="promocoes">
+        <div class="container">
+            <div class="marcas-promo-header gs-reveal">
+                <div>
+                    <span class="tag">Seleção & oportunidades</span>
+                    <h2 class="section-title">Marcas que você ama.<br><em>Condições que valem a pena.</em></h2>
                 </div>
+                <p>Perfumes, cuidados pessoais e presentes escolhidos para facilitar sua compra e seu atendimento com a Cláudia.</p>
             </div>
-            
-            <div class="box-promo gs-reveal">
-                <h3 class="mb-3 section-title" style="font-size: 2.2rem;">Ofertas Especiais</h3>
-                <div class="promo-banner glass-effect">
-                    <i data-lucide="sparkles" class="promo-icon mb-2" stroke-width="1.5"></i>
-                    <span id="promo-text-display">Promoções incríveis esperando por você.</span>
+
+            <div class="marcas-promo-grid">
+                <div class="box-marcas gs-reveal">
+                    <div class="box-label">
+                        <i data-lucide="badge-check" stroke-width="1.5"></i>
+                        <span>Marcas disponíveis</span>
+                    </div>
+
+                    <div class="marcas-list marcas-list--cards" id="marcas-container">
+                        <!-- Gerado por JS baseado no config.js -->
+                    </div>
+
+                    <div class="brand-benefits">
+                        <span><i data-lucide="sparkles" stroke-width="1.5"></i> Perfumaria</span>
+                        <span><i data-lucide="heart" stroke-width="1.5"></i> Corpo & banho</span>
+                        <span><i data-lucide="gift" stroke-width="1.5"></i> Presentes</span>
+                    </div>
+
+                    <button class="btn btn-outline brand-cta wpp-link" data-msg="Olá, Cláudia! Gostaria de saber quais produtos de O Boticário e Natura você tem disponíveis no momento.">
+                        <span>Consultar produtos disponíveis</span>
+                        <i data-lucide="arrow-up-right" stroke-width="1.5"></i>
+                    </button>
                 </div>
-                <p class="disclaimer mt-2"><i data-lucide="info" style="width:14px; height:14px;"></i> Consulte condições e disponibilidade no WhatsApp.</p>
+                
+                <div class="box-promo gs-reveal">
+                    <div class="promo-card-premium">
+                        <div class="promo-card-top">
+                            <span class="promo-eyebrow">Oferta em destaque</span>
+                            <span class="promo-pill"><i data-lucide="sparkles" stroke-width="1.5"></i> Selecionados</span>
+                        </div>
+
+                        <div class="promo-card-content">
+                            <div class="promo-number-wrap">
+                                <span class="promo-prefix">Até</span>
+                                <strong class="promo-number">20%</strong>
+                                <span class="promo-off">OFF</span>
+                            </div>
+
+                            <div class="promo-copy">
+                                <h3>Uma oportunidade para aproveitar agora.</h3>
+                                <p id="promo-text-display">Até 20% OFF em produtos selecionados</p>
+                            </div>
+                        </div>
+
+                        <div class="promo-card-bottom">
+                            <div class="promo-note">
+                                <i data-lucide="info" stroke-width="1.5"></i>
+                                <span>Consulte condições e disponibilidade.</span>
+                            </div>
+                            <button class="promo-whatsapp-btn wpp-link" data-msg="Olá, Cláudia! Vi a oferta de até 20% OFF e gostaria de saber quais produtos estão participando.">
+                                <span>Ver ofertas no WhatsApp</span>
+                                <i data-lucide="arrow-right" stroke-width="1.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
