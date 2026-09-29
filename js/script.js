@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
        8. Ativar WhatsApp (Microinteração e Link Inteligente)
        ========================================================================== */
     setupWhatsAppLinks();
+    setupQuickContact();
 
     // FAB Widget (Aparece após 5s)
     const fabTooltip = document.getElementById('fab-tooltip');
@@ -216,6 +217,9 @@ function initStoreConfig() {
     document.getElementById('footer-store-name').textContent = STORE.name;
     document.getElementById('current-year').textContent = new Date().getFullYear();
     document.getElementById('promo-text-display').textContent = STORE.promotion;
+
+    const footerPhone = document.getElementById('footer-phone');
+    if (footerPhone && STORE.phone) footerPhone.textContent = STORE.phone;
     
     const instaLink = document.getElementById('insta-link');
     instaLink.innerHTML = `<i data-lucide="instagram" stroke-width="1.5"></i> <span>${STORE.instagram}</span>`;
@@ -367,6 +371,8 @@ function setupAgeGate() {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 pendingTarget.classList.add('active');
                 renderVitrine(filter);
+            } else if (pendingTarget.classList.contains('wpp-link')) {
+                pendingTarget.click();
             } else if (href?.startsWith('#')) {
                 const target = document.querySelector(href);
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -514,5 +520,40 @@ function initPremiumUI(prefersReducedMotion) {
             btn.parentElement?.querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('is-selected'));
             btn.classList.add('is-selected');
         });
+    });
+}
+
+
+function setupQuickContact() {
+    const widget = document.getElementById('quick-contact-widget');
+    const toggle = document.getElementById('quick-contact-toggle');
+    const menu = document.getElementById('quick-contact-menu');
+
+    if (!widget || !toggle || !menu) return;
+
+    const setOpen = (open) => {
+        widget.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+    };
+
+    toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setOpen(!widget.classList.contains('is-open'));
+    });
+
+    menu.querySelectorAll('.quick-contact-item').forEach(item => {
+        item.addEventListener('click', () => {
+            setTimeout(() => setOpen(false), 250);
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!widget.contains(e.target)) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
     });
 }
