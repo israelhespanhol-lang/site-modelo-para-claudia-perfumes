@@ -49,6 +49,33 @@ const PRODUCTS = [
        promotion: true
     },
     {
+       id: 7,
+       name: "Conjunto Renda Rubi",
+       category: "lingerie",
+       brand: "Modelo demonstrativo",
+       description: "Exemplo visual para substituir pelas fotos reais disponíveis na loja.",
+       image: "https://images.pexels.com/photos/6675831/pexels-photo-6675831.jpeg?auto=compress&cs=tinysrgb&w=900",
+       promotion: false
+    },
+    {
+       id: 8,
+       name: "Conjunto Clássico",
+       category: "lingerie",
+       brand: "Modelo demonstrativo",
+       description: "Vitrine de referência para apresentar estilos e consultar tamanhos pelo WhatsApp.",
+       image: "https://images.pexels.com/photos/6879815/pexels-photo-6879815.jpeg?auto=compress&cs=tinysrgb&w=900",
+       promotion: false
+    },
+    {
+       id: 9,
+       name: "Renda & Acessórios",
+       category: "lingerie",
+       brand: "Modelo demonstrativo",
+       description: "Composição de exemplo para deixar o catálogo mais visual e sofisticado.",
+       image: "https://images.pexels.com/photos/4314754/pexels-photo-4314754.jpeg?auto=compress&cs=tinysrgb&w=900",
+       promotion: false
+    },
+    {
        id: 5,
        name: "Óleo de Massagem Aquecimento",
        category: "intimidade",
