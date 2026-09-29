@@ -1855,3 +1855,420 @@ body > *:not(.ambient-glow):not(.noise-layer):not(.scroll-progress){ position:re
         min-height: 340px;
     }
 }
+
+
+/* ==========================================================================
+   Upgrade — Marcas & Promoções
+   ========================================================================== */
+.marcas-promo {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 7% 12%, rgba(203,161,83,.10), transparent 28%),
+        radial-gradient(circle at 92% 82%, rgba(196,142,135,.16), transparent 30%),
+        #f4eee8;
+}
+
+.marcas-promo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(74,26,44,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74,26,44,.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,.24), transparent 80%);
+}
+
+.marcas-promo-header {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 1.5rem;
+    align-items: end;
+    margin-bottom: 3rem;
+}
+
+.marcas-promo-header .section-title {
+    margin-bottom: 0;
+}
+
+.marcas-promo-header .section-title em {
+    color: var(--color-rose);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.marcas-promo-header > p {
+    max-width: 560px;
+    justify-self: end;
+    font-size: 1rem;
+    line-height: 1.75;
+    opacity: .76;
+}
+
+@media (min-width: 900px) {
+    .marcas-promo-header {
+        grid-template-columns: 1.05fr .95fr;
+        gap: 5rem;
+        margin-bottom: 4rem;
+    }
+}
+
+.marcas-promo-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+@media (min-width: 992px) {
+    .marcas-promo-grid {
+        grid-template-columns: .9fr 1.1fr;
+        gap: 1.4rem;
+    }
+}
+
+.box-marcas,
+.box-promo {
+    min-width: 0;
+}
+
+.box-marcas {
+    height: 100%;
+    padding: 2rem;
+    background: rgba(255,255,255,.62);
+    border: 1px solid rgba(74,26,44,.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 18px 50px rgba(47,15,27,.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.box-label {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: 1.5rem;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: var(--color-gold);
+    font-weight: 700;
+}
+
+.box-label svg {
+    width: 16px;
+    height: 16px;
+}
+
+.marcas-list--cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: .75rem;
+    margin-bottom: 1.4rem;
+}
+
+.marcas-list--cards .marca-tag {
+    position: relative;
+    min-height: 112px;
+    padding: 1.15rem;
+    border: 1px solid rgba(74,26,44,.08);
+    background: rgba(250,249,246,.86);
+    display: flex;
+    align-items: flex-end;
+    font-family: var(--font-heading);
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    font-style: italic;
+    line-height: 1;
+    overflow: hidden;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.marcas-list--cards .marca-tag::before {
+    content: "";
+    position: absolute;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    right: -24px;
+    top: -24px;
+    background: radial-gradient(circle, rgba(203,161,83,.28), rgba(203,161,83,0) 70%);
+    transition: transform .35s ease;
+}
+
+.marcas-list--cards .marca-tag:hover {
+    transform: translateY(-4px);
+    border-color: rgba(203,161,83,.35);
+    box-shadow: 0 14px 30px rgba(47,15,27,.08);
+}
+
+.marcas-list--cards .marca-tag:hover::before {
+    transform: scale(1.2);
+}
+
+.brand-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55rem;
+    margin-bottom: 1.5rem;
+}
+
+.brand-benefits span {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .55rem .7rem;
+    border-radius: 999px;
+    background: rgba(74,26,44,.045);
+    font-size: .72rem;
+    letter-spacing: .04em;
+}
+
+.brand-benefits svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-gold);
+}
+
+.brand-cta {
+    width: 100%;
+    margin-top: auto;
+    justify-content: space-between;
+}
+
+.promo-card-premium {
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    padding: 2rem;
+    color: #fff;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,.05), transparent 35%),
+        linear-gradient(135deg, #6b243e 0%, #4a1a2c 52%, #2f0f1b 100%);
+    box-shadow: 0 24px 70px rgba(47,15,27,.18);
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-card-premium::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    top: -120px;
+    right: -90px;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow:
+        0 0 0 40px rgba(255,255,255,.025),
+        0 0 0 80px rgba(255,255,255,.018);
+}
+
+.promo-card-premium::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    left: -80px;
+    bottom: -110px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(203,161,83,.20), transparent 68%);
+}
+
+.promo-card-top,
+.promo-card-content,
+.promo-card-bottom {
+    position: relative;
+    z-index: 2;
+}
+
+.promo-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2.2rem;
+}
+
+.promo-eyebrow {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    opacity: .72;
+}
+
+.promo-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .5rem .75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(8px);
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.promo-pill svg {
+    width: 14px;
+    height: 14px;
+    color: #f4d28f;
+}
+
+.promo-card-content {
+    display: grid;
+    gap: 1.8rem;
+    align-items: end;
+    margin-bottom: 2.2rem;
+}
+
+@media (min-width: 620px) {
+    .promo-card-content {
+        grid-template-columns: .75fr 1.25fr;
+    }
+}
+
+.promo-number-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "prefix number"
+        "off off";
+    align-items: end;
+    column-gap: .45rem;
+}
+
+.promo-prefix {
+    grid-area: prefix;
+    align-self: center;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    opacity: .7;
+}
+
+.promo-number {
+    grid-area: number;
+    font-family: var(--font-heading);
+    font-size: clamp(5rem, 10vw, 8.2rem);
+    line-height: .78;
+    font-weight: 500;
+    letter-spacing: -.05em;
+    color: #fff;
+}
+
+.promo-off {
+    grid-area: off;
+    justify-self: end;
+    margin-top: .45rem;
+    font-size: .9rem;
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    color: #f4d28f;
+}
+
+.promo-copy h3 {
+    color: #fff;
+    font-size: clamp(1.7rem, 2.6vw, 2.55rem);
+    margin-bottom: .8rem;
+}
+
+.promo-copy p {
+    font-size: .92rem;
+    line-height: 1.6;
+    opacity: .72;
+}
+
+.promo-card-bottom {
+    margin-top: auto;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,.12);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.promo-note {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .76rem;
+    opacity: .7;
+}
+
+.promo-note svg {
+    width: 15px;
+    height: 15px;
+}
+
+.promo-whatsapp-btn {
+    width: 100%;
+    min-height: 50px;
+    padding: .85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .8rem;
+    color: #241017;
+    background: #f4d28f;
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 700;
+    transition: transform .25s ease, background .25s ease;
+}
+
+.promo-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    background: #fff2cb;
+}
+
+.promo-whatsapp-btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+@media (max-width: 767px) {
+    .marcas-promo-header {
+        margin-bottom: 2rem;
+    }
+
+    .marcas-promo-header > p {
+        justify-self: start;
+    }
+
+    .box-marcas,
+    .promo-card-premium {
+        padding: 1.35rem;
+    }
+
+    .marcas-list--cards {
+        grid-template-columns: 1fr 1fr;
+        gap: .6rem;
+    }
+
+    .marcas-list--cards .marca-tag {
+        min-height: 96px;
+        font-size: 1.45rem;
+    }
+
+    .promo-card-top {
+        margin-bottom: 1.5rem;
+    }
+
+    .promo-card-content {
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .promo-number {
+        font-size: clamp(4.7rem, 25vw, 6.3rem);
+    }
+}
