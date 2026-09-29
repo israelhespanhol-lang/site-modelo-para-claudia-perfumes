@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
        3. Inicializar Lucide Icons
        ========================================================================== */
     lucide.createIcons();
+    initPremiumUI(prefersReducedMotion);
 
     /* ==========================================================================
        4. Inicializar Swiper
@@ -34,6 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
             el: '.swiper-pagination',
             clickable: true,
         },
+        speed: 750,
+        autoplay: prefersReducedMotion ? false : {
+            delay: 4200,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true
+        }
     });
 
     /* ==========================================================================
@@ -234,25 +241,29 @@ function setupWhatsAppLinks() {
     if(typeof STORE === 'undefined') return;
 
     document.querySelectorAll('.wpp-link').forEach(link => {
+        if (link.dataset.wppBound === 'true') return;
+        link.dataset.wppBound = 'true';
+
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Microinteração
+
             const originalHTML = this.innerHTML;
             if(this.tagName.toLowerCase() === 'button') {
-                this.innerHTML = `<span>Abrindo WhatsApp...</span>`;
+                this.innerHTML = '<span>Abrindo WhatsApp...</span>';
+                this.disabled = true;
             }
-            
+
             const msg = this.getAttribute('data-msg') || "Olá, Cláudia! Gostaria de conversar com você.";
             const url = `https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent(msg)}`;
-            
+
             setTimeout(() => {
-                window.open(url, '_blank');
+                window.open(url, '_blank', 'noopener,noreferrer');
                 if(this.tagName.toLowerCase() === 'button') {
                     this.innerHTML = originalHTML;
-                    lucide.createIcons(); // Recria o ícone se houver
+                    this.disabled = false;
+                    if (window.lucide) lucide.createIcons();
                 }
-            }, 600);
+            }, 420);
         });
     });
 }
@@ -326,27 +337,48 @@ function setupFilters() {
 
 function setupAgeGate() {
     const ageGate = document.getElementById('age-gate');
-    const ageVerified = sessionStorage.getItem('ageVerified') === 'true';
+    if (!ageGate) return;
+
+    let pendingTarget = null;
 
     function showGate(e) {
-        if (!ageVerified && sessionStorage.getItem('ageVerified') !== 'true') {
-            e.preventDefault();
-            e.stopPropagation();
-            ageGate.style.display = 'flex';
-        }
+        if (sessionStorage.getItem('ageVerified') === 'true') return;
+        e.preventDefault();
+        e.stopPropagation();
+        pendingTarget = e.currentTarget;
+        ageGate.style.display = 'flex';
+        requestAnimationFrame(() => ageGate.classList.add('is-open'));
     }
 
-    document.querySelectorAll('.age-restricted-link').forEach(l => l.addEventListener('click', showGate));
-    document.querySelectorAll('.age-restricted-btn').forEach(b => b.addEventListener('click', showGate));
-
-    document.getElementById('btn-age-yes').addEventListener('click', () => {
-        sessionStorage.setItem('ageVerified', 'true');
-        ageGate.style.display = 'none';
+    document.querySelectorAll('.age-restricted-link, .age-restricted-btn').forEach(el => {
+        el.addEventListener('click', showGate, true);
     });
 
-    document.getElementById('btn-age-no').addEventListener('click', () => {
+    document.getElementById('btn-age-yes')?.addEventListener('click', () => {
+        sessionStorage.setItem('ageVerified', 'true');
+        ageGate.classList.remove('is-open');
         ageGate.style.display = 'none';
-        window.location.hash = '#hero'; // Joga pro topo se for link ancora
+
+        if (pendingTarget) {
+            const filter = pendingTarget.getAttribute('data-filter');
+            const href = pendingTarget.getAttribute('href');
+
+            if (filter) {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                pendingTarget.classList.add('active');
+                renderVitrine(filter);
+            } else if (href?.startsWith('#')) {
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        pendingTarget = null;
+    });
+
+    document.getElementById('btn-age-no')?.addEventListener('click', () => {
+        pendingTarget = null;
+        ageGate.classList.remove('is-open');
+        ageGate.style.display = 'none';
     });
 }
 
@@ -395,6 +427,84 @@ function setupQuiz() {
                 wppBtn.setAttribute('data-msg', msg);
                 setupWhatsAppLinks(); // Re-bind
             }
+        });
+    });
+}
+
+
+function initPremiumUI(prefersReducedMotion) {
+    const progress = document.getElementById('scroll-progress-bar');
+    const updateProgress = () => {
+        if (!progress) return;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = max > 0 ? window.scrollY / max : 0;
+        progress.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio))})`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    if (!prefersReducedMotion && window.SplitType && window.gsap) {
+        const title = document.querySelector('.hero-title');
+        if (title && !title.dataset.splitReady) {
+            title.dataset.splitReady = 'true';
+            const split = new SplitType(title, { types: 'words, chars' });
+            gsap.from(split.chars, {
+                yPercent: 110,
+                opacity: 0,
+                duration: 0.9,
+                ease: 'power4.out',
+                stagger: 0.018,
+                delay: 0.15
+            });
+        }
+    }
+
+    if (!prefersReducedMotion && window.VanillaTilt) {
+        VanillaTilt.init(document.querySelectorAll('.atalho-card, .produto-card, .presente-card'), {
+            max: 4,
+            speed: 450,
+            scale: 1.01,
+            glare: true,
+            'max-glare': 0.08,
+            gyroscope: false
+        });
+    }
+
+    if (!prefersReducedMotion && window.gsap) {
+        gsap.to('.ambient-glow--one', {
+            xPercent: -8, yPercent: 8, duration: 8, ease: 'sine.inOut', yoyo: true, repeat: -1
+        });
+        gsap.to('.ambient-glow--two', {
+            xPercent: 10, yPercent: -6, duration: 10, ease: 'sine.inOut', yoyo: true, repeat: -1
+        });
+
+        gsap.utils.toArray('.hero-orbit-badge').forEach((badge, i) => {
+            gsap.to(badge, {
+                y: i % 2 ? -9 : 9,
+                duration: 2.6 + i * .5,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1
+            });
+        });
+    }
+
+    const sections = [...document.querySelectorAll('section[id]')];
+    const navLinks = [...document.querySelectorAll('.desktop-nav a[href^="#"]')];
+    if ('IntersectionObserver' in window && sections.length && navLinks.length) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+            });
+        }, { rootMargin: '-35% 0px -55% 0px', threshold: 0.01 });
+        sections.forEach(section => observer.observe(section));
+    }
+
+    document.querySelectorAll('.quiz-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.parentElement?.querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('is-selected'));
+            btn.classList.add('is-selected');
         });
     });
 }
