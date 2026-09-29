@@ -468,7 +468,7 @@ function initPremiumUI(prefersReducedMotion) {
     }
 
     if (!prefersReducedMotion && window.VanillaTilt) {
-        VanillaTilt.init(document.querySelectorAll('.atalho-card, .produto-card, .presente-card, .lingerie-look, .intimidade-feature'), {
+        VanillaTilt.init(document.querySelectorAll('.atalho-card, .lingerie-look, .intimidade-feature'), {
             max: 4,
             speed: 450,
             scale: 1.01,
